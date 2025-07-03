@@ -1,13 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
+import NewsFeed from '@/components/NewsFeed.tsx';
+import Header from '@/components/Header.tsx';
+
 
 const Home: React.FC = () => {
+  const [filters, setFilters] = useState({});
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const handleSearch = (value: string) => {
+    setSearchTerm(value);
+  };
+
+  const handleFilterChange = (type: string, value: string) => {
+    setFilters(prevState => ({ ...prevState, [type]: value }));
+  };
 
   return (
     <div>
-      HOME
+      <Header onSearch={handleSearch} onFilterChange={handleFilterChange}/>
+      <NewsFeed filters={filters} searchTerm={searchTerm}/>
     </div>
   );
-
 };
 
 export default Home;
