@@ -8,4 +8,4 @@ services:
     image: news-aggregator:latest
     ports:
       - "3000:80"
-    restart: unless-stopped   # Optional: automatically restart the container
+    restart: unless-stopped

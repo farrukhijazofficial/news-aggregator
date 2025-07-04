@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const fetchArticles = (filters: any, searchTerm: string) => {
+const fetchArticles = async (filters: any, searchTerm: string) => {
   let apiUrl = `https://newsapi.org/v2/everything?apiKey=${import.meta.env.VITE_NEWS_API_KEY}`;
 
   if (searchTerm) {
@@ -24,10 +24,7 @@ const fetchArticles = (filters: any, searchTerm: string) => {
     apiUrl += `&domains=${filters.source}`;
   }
 
-  return axios.get(apiUrl).catch((err) => {
-    console.log(err.message);
-    return err;
-  });
+  return axios.get(apiUrl);
 };
 
 export default fetchArticles;

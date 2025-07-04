@@ -3,6 +3,7 @@ import fetchArticles from '@/services/fetchArticles.ts';
 import { Col, Row } from 'antd';
 import NewsCard from '@/components/NewsCard.tsx';
 import Loader from '@/utils/Loader.tsx';
+import { toast } from 'react-toastify';
 
 type NewsFeedProps = {
   filters: { [key: string]: string };
@@ -24,8 +25,9 @@ const NewsFeed: React.FC<NewsFeedProps> = ({ filters, searchTerm }) => {
           setArticles(res?.data?.articles);
           setLoading(false);
         }
-      }).catch(() => {
+      }).catch((err) => {
         setLoading(false);
+        toast.error(err?.response?.data?.message);
       });
     } else {
       if (searchTerm || Object.keys(filters).length) {
@@ -37,6 +39,7 @@ const NewsFeed: React.FC<NewsFeedProps> = ({ filters, searchTerm }) => {
           }
         }).catch(() => {
           setLoading(false);
+          toast.error(err?.response?.data?.message);
         });
       }
     }
