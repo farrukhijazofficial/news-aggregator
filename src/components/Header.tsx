@@ -11,7 +11,7 @@ type HeaderProps = {
 
 const Header: React.FC<HeaderProps> = ({ onSearch, onFilterChange }) => {
   return (
-    <div style={{ marginTop: '30px'}}>
+    <div style={{ marginTop: '30px' }}>
       <Row justify="center">
         <h2>News Aggregator</h2>
       </Row>
@@ -39,11 +39,11 @@ const Header: React.FC<HeaderProps> = ({ onSearch, onFilterChange }) => {
         </Col>
         <Col xs={24} sm={12} md={4} lg={4}>
           <DatePicker style={{ width: '100%' }} placeholder="Select From Date"
-                      onChange={(date, dateString) => onFilterChange('from', dateString)}/>
+                      onChange={(date) => onFilterChange('from', date.format('YYYY-MM-DD'))}/>
         </Col>
         <Col xs={24} sm={12} md={4} lg={4}>
           <DatePicker style={{ width: '100%' }} placeholder="Select To Date"
-                      onChange={(date, dateString) => onFilterChange('to', dateString)}/>
+                      onChange={(date) => onFilterChange('to', date.format('YYYY-MM-DD'))}/>
         </Col>
       </Row>
     </div>

@@ -37,7 +37,7 @@ const NewsFeed: React.FC<NewsFeedProps> = ({ filters, searchTerm }) => {
             setArticles(res?.data?.articles);
             setLoading(false);
           }
-        }).catch(() => {
+        }).catch((err) => {
           setLoading(false);
           toast.error(err?.response?.data?.message);
         });
