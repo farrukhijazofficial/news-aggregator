@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  news-aggregator:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: news-aggregator:latest
+    ports:
+      - "3000:80"
+    restart: unless-stopped   # Optional: automatically restart the container
