@@ -4,6 +4,7 @@ import { Col, Row } from 'antd';
 import NewsCard from '@/components/NewsCard.tsx';
 import Loader from '@/utils/Loader.tsx';
 import { toast } from 'react-toastify';
+import type { Article } from '@/types/common.ts';
 
 type NewsFeedProps = {
   filters: { [key: string]: string };
@@ -11,7 +12,7 @@ type NewsFeedProps = {
 }
 
 const NewsFeed: React.FC<NewsFeedProps> = ({ filters, searchTerm }) => {
-  const [articles, setArticles] = useState([]);
+  const [articles, setArticles] = useState<Article[]>([]);
   const [loading, setLoading] = useState(false);
 
   const isFirstRender = useRef(true);

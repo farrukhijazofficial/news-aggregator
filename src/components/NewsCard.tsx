@@ -1,12 +1,13 @@
 import React from 'react';
 import { Card, Typography } from 'antd';
+import type { Article } from '@/types/common.ts';
 import daysjs from 'dayjs';
 
 const { Paragraph } = Typography;
 
 type NewsCardProps = {
-  article: { [key: string]: string };
-}
+  article: Article;
+};
 
 const NewsCard: React.FC<NewsCardProps> = ({ article }) => {
   const readMore = () => {

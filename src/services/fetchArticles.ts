@@ -1,4 +1,5 @@
 import axios from 'axios';
+import type { NewsFeedApiResponse } from '@/types/common.ts';
 
 const fetchArticles = async (filters: any, searchTerm: string) => {
   let apiUrl = `https://newsapi.org/v2/everything?apiKey=${import.meta.env.VITE_NEWS_API_KEY}`;
@@ -24,7 +25,7 @@ const fetchArticles = async (filters: any, searchTerm: string) => {
     apiUrl += `&domains=${filters.source}`;
   }
 
-  return axios.get(apiUrl);
+  return axios.get<NewsFeedApiResponse>(apiUrl);
 };
 
 export default fetchArticles;

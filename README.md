@@ -7,6 +7,10 @@ Before you start, ensure you have the following installed on your local machine:
 - [Docker](https://docs.docker.com/get-docker/)
 - [Docker Compose](https://docs.docker.com/compose/install/)
 
+### Additionally
+
+- Rename the `.env.example` file to `.env`
+- Use the API key provided via email in the `.env` file
 ---
 
 ## 🚀 Running the App with Docker
