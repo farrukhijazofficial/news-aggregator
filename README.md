@@ -11,7 +11,6 @@ Before you start, ensure you have the following installed on your local machine:
 
 - Rename the `.env.example` file to `.env`
 - Use the API key provided via email in the `.env` file
----
 
 ## 🚀 Running the App with Docker
 
@@ -32,8 +31,6 @@ Open your browser and visit: http://localhost:3000
 ### `docker-compose down`
 
 This command stops and removes the containers, networks, and volumes created by Docker Compose.
-
----
 
 # 📦 Available Scripts (Local Development Only)
 If you want to run the app locally without Docker, you can use the following npm scripts:
