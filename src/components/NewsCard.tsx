@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card, Typography } from 'antd';
+import daysjs from 'dayjs';
 
 const { Paragraph } = Typography;
 
@@ -40,7 +41,7 @@ const NewsCard: React.FC<NewsCardProps> = ({ article }) => {
       </div>
       <div>
         <p><strong>Source:</strong> {article?.source?.name}</p>
-        <p><strong>Date:</strong> {new Date(article?.publishedAt).toLocaleDateString()}</p>
+        <p><strong>Date:</strong> {daysjs(article?.publishedAt).format('DD/MM/YYYY')}</p>
       </div>
     </Card>
   );
