@@ -11,13 +11,13 @@ const Home: React.FC = () => {
     setSearchTerm(value);
   };
 
-  const handleFilterChange = (type: string, value: string) => {
+  const handleFilterChange = (type: string, value: string | null) => {
     setFilters(prevState => ({ ...prevState, [type]: value }));
   };
 
   return (
     <div>
-      <Header onSearch={handleSearch} onFilterChange={handleFilterChange}/>
+      <Header onSearch={handleSearch} onFilterChange={handleFilterChange} filters={filters}/>
       <NewsFeed filters={filters} searchTerm={searchTerm}/>
     </div>
   );

@@ -2,7 +2,7 @@ import axios from 'axios';
 import type { NewsFeedApiResponse } from '@/types/common.ts';
 
 const fetchArticles = async (filters: any, searchTerm: string) => {
-  let apiUrl = `https://newsapi.org/v2/everything?apiKey=${import.meta.env.VITE_NEWS_API_KEY}`;
+  let apiUrl = `https://newsapi.org/v2/everything?apiKey=${import.meta.env.VITE_NEWS_API_KEY}&sortBy=publishedAt`;
 
   if (searchTerm) {
     apiUrl += `&q=${searchTerm}`;
